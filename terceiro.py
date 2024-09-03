@@ -5,7 +5,7 @@ def calcular_faturamento(filename):
     with open(filename, "r") as file:
         dados = json.load(file)
 
-    faturamentos = [dado["faturamento"] for dado in dados if dado["faturamento"] > 0]
+    faturamentos = [dado["valor"] for dado in dados if dado["valor"] > 0]
 
     if not faturamentos:
         return "Não há dados de faturamento disponíveis."
@@ -25,5 +25,5 @@ def calcular_faturamento(filename):
     }
 
 
-resultado = calcular_faturamento("faturamento.json")
+resultado = calcular_faturamento("dados.json")
 print(resultado)
